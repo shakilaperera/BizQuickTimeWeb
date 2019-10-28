@@ -1,0 +1,79 @@
+﻿@page
+@model BizQuickTime.Web.Pages.Companies.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    ViewData["ActivePage"] = BizQuickTime.Web.Pages.Shared.ManageNavPages.Companies;
+}
+
+
+<h4>Company</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Company.Name" class="control-label"></label>
+                <input asp-for="Company.Name" class="form-control" />
+                <span asp-validation-for="Company.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Currency" class="control-label"></label>
+                <input asp-for="Company.Currency" class="form-control" />
+                <span asp-validation-for="Company.Currency" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.ContactName" class="control-label"></label>
+                <input asp-for="Company.ContactName" class="form-control" />
+                <span asp-validation-for="Company.ContactName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Address" class="control-label"></label>
+                <input asp-for="Company.Address" class="form-control" />
+                <span asp-validation-for="Company.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.VatNumber" class="control-label"></label>
+                <input asp-for="Company.VatNumber" class="form-control" />
+                <span asp-validation-for="Company.VatNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.VatPercentage" class="control-label"></label>
+                <input asp-for="Company.VatPercentage" class="form-control" />
+                <span asp-validation-for="Company.VatPercentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.CompanyRegNo" class="control-label"></label>
+                <input asp-for="Company.CompanyRegNo" class="form-control" />
+                <span asp-validation-for="Company.CompanyRegNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.PhoneNo" class="control-label"></label>
+                <input asp-for="Company.PhoneNo" class="form-control" />
+                <span asp-validation-for="Company.PhoneNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Email" class="control-label"></label>
+                <input asp-for="Company.Email" class="form-control" />
+                <span asp-validation-for="Company.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.CompanyLogo" class="control-label"></label>
+                <input asp-for="Company.CompanyLogo" class="form-control" />
+                <span asp-validation-for="Company.CompanyLogo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

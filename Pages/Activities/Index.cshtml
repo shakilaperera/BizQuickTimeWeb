@@ -1,0 +1,110 @@
+﻿@page
+@model BizQuickTime.Web.Pages.Activities.IndexModel
+
+@{
+    ViewData["Title"] = "Activities";
+    ViewData["ActivePage"] = BizQuickTime.Web.Pages.Shared.ManageNavPages.Activities;
+}
+
+    
+
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].ActivityId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].ActivityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].CalcType1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].CalcType2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].CalcType3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].EstimationQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].EstimationUnit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].EstimatedValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].CappedValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].PurchaseOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].PurchaseOrderQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].POGrossAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].ShortId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Activity) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivityId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivityName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalcType1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalcType2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalcType3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstimationQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstimationUnit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstimatedValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CappedValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseOrderQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.POGrossAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

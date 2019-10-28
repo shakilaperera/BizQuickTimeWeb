@@ -1,0 +1,56 @@
+﻿@page
+@model BizQuickTime.Web.Pages.SubProjects.CreateModel
+
+@{
+    ViewData["Title"] = "Create Sub Project";
+    
+    ViewData["ActivePage"] = BizQuickTime.Web.Pages.Shared.ManageNavPages.Subprojects;
+}
+
+    
+
+<h4>SubProject</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SubProject.SubProjectID" class="control-label"></label>
+                <input asp-for="SubProject.SubProjectID" class="form-control" />
+                <span asp-validation-for="SubProject.SubProjectID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubProject.Name" class="control-label"></label>
+                <input asp-for="SubProject.Name" class="form-control" />
+                <span asp-validation-for="SubProject.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubProject.CalcType1" class="control-label"></label>
+                <input asp-for="SubProject.CalcType1" class="form-control" />
+                <span asp-validation-for="SubProject.CalcType1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubProject.CalcType2" class="control-label"></label>
+                <input asp-for="SubProject.CalcType2" class="form-control" />
+                <span asp-validation-for="SubProject.CalcType2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubProject.CalcType3" class="control-label"></label>
+                <input asp-for="SubProject.CalcType3" class="form-control" />
+                <span asp-validation-for="SubProject.CalcType3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

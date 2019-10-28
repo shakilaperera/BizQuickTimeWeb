@@ -1,0 +1,98 @@
+﻿@page
+@model BizQuickTime.Web.Pages.Activities.DetailsModel
+
+@{
+    ViewData["Title"] = "Details Activity";
+    ViewData["ActivePage"] = BizQuickTime.Web.Pages.Shared.ManageNavPages.Activities;
+}
+
+    
+
+<div>
+    <h4>Activity</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.ActivityId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.ActivityId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.ActivityName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.ActivityName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.CalcType1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.CalcType1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.CalcType2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.CalcType2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.CalcType3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.CalcType3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.EstimationQty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.EstimationQty)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.EstimationUnit)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.EstimationUnit)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.EstimatedValue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.EstimatedValue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.CappedValue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.CappedValue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.PurchaseOrder)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.PurchaseOrder)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.PurchaseOrderQty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.PurchaseOrderQty)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.POGrossAmount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.POGrossAmount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity.ShortId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Activity.ShortId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Activity.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

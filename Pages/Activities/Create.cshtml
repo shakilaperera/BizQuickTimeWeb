@@ -1,0 +1,95 @@
+﻿@page
+@model BizQuickTime.Web.Pages.Activities.CreateModel
+
+@{
+    ViewData["Title"] = "Create Activity";
+    ViewData["ActivePage"] = BizQuickTime.Web.Pages.Shared.ManageNavPages.Activities;
+}
+
+    
+
+<h4>Activity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Activity.ActivityId" class="control-label"></label>
+                <input asp-for="Activity.ActivityId" class="form-control" />
+                <span asp-validation-for="Activity.ActivityId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.ActivityName" class="control-label"></label>
+                <input asp-for="Activity.ActivityName" class="form-control" />
+                <span asp-validation-for="Activity.ActivityName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.CalcType1" class="control-label"></label>
+                <input asp-for="Activity.CalcType1" class="form-control" />
+                <span asp-validation-for="Activity.CalcType1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.CalcType2" class="control-label"></label>
+                <input asp-for="Activity.CalcType2" class="form-control" />
+                <span asp-validation-for="Activity.CalcType2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.CalcType3" class="control-label"></label>
+                <input asp-for="Activity.CalcType3" class="form-control" />
+                <span asp-validation-for="Activity.CalcType3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.EstimationQty" class="control-label"></label>
+                <input asp-for="Activity.EstimationQty" class="form-control" />
+                <span asp-validation-for="Activity.EstimationQty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.EstimationUnit" class="control-label"></label>
+                <input asp-for="Activity.EstimationUnit" class="form-control" />
+                <span asp-validation-for="Activity.EstimationUnit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.EstimatedValue" class="control-label"></label>
+                <input asp-for="Activity.EstimatedValue" class="form-control" />
+                <span asp-validation-for="Activity.EstimatedValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.CappedValue" class="control-label"></label>
+                <input asp-for="Activity.CappedValue" class="form-control" />
+                <span asp-validation-for="Activity.CappedValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.PurchaseOrder" class="control-label"></label>
+                <input asp-for="Activity.PurchaseOrder" class="form-control" />
+                <span asp-validation-for="Activity.PurchaseOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.PurchaseOrderQty" class="control-label"></label>
+                <input asp-for="Activity.PurchaseOrderQty" class="form-control" />
+                <span asp-validation-for="Activity.PurchaseOrderQty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.POGrossAmount" class="control-label"></label>
+                <input asp-for="Activity.POGrossAmount" class="form-control" />
+                <span asp-validation-for="Activity.POGrossAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.ShortId" class="control-label"></label>
+                <input asp-for="Activity.ShortId" class="form-control" />
+                <span asp-validation-for="Activity.ShortId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
