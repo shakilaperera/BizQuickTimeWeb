@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BizQuickTime.Web.Areas.Identity.Pages.Account
 {
@@ -24,8 +25,9 @@ namespace BizQuickTime.Web.Areas.Identity.Pages.Account
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly BizQuickTime.Web.Models.BQTDataContext _context;
 
-        public RegisterModel(
+        public RegisterModel(BizQuickTime.Web.Models.BQTDataContext context,
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
@@ -35,6 +37,7 @@ namespace BizQuickTime.Web.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _context = context;
         }
 
         [BindProperty]
@@ -65,13 +68,17 @@ namespace BizQuickTime.Web.Areas.Identity.Pages.Account
             [MaxLength(5)]
             [Required]
             public string Currency { get; set; }
+            [Display(Name = "Company")]
             public string CompanyID { get; set; }
+            public IEnumerable<SelectListItem> Companies { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            Input = new InputModel();
+            Input.Companies = GetCompanies();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
@@ -115,6 +122,24 @@ namespace BizQuickTime.Web.Areas.Identity.Pages.Account
 
             // If we got this far, something failed, redisplay form
             return Page();
+        }
+        private IEnumerable<SelectListItem> GetCompanies()
+        {
+            List<SelectListItem> companies = _context.Company
+                .OrderBy(n => n.Name)
+                    .Select(n =>
+                    new SelectListItem
+                    {
+                        Value = n.ID.ToString(),
+                        Text = n.Name
+                    }).ToList();
+            //var tip = new SelectListItem()
+            //{
+            //    Value = null,
+            //    Text = "--- select company ---"
+            //};
+            //companies.Insert(0, tip);
+            return new SelectList(companies, "Value", "Text");
         }
     }
 }

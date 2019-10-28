@@ -29,11 +29,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="Input.CompanyID"></label>
-                <input asp-for="Input.CompanyID" class="form-control" />
+                @Html.DropDownListFor(m => m.Input.CompanyID, Model.Input.Companies,new { @class="form-control"})
             </div>
             <div class="form-group">
                 <label asp-for="Input.Currency"></label>
                 <input asp-for="Input.Currency" class="form-control" />
+               
+
+
             </div>
             <button type="submit" class="btn btn-default">Register</button>
         </form>

@@ -154,12 +154,12 @@
                 </ul>
             </li>*@
             <li class="treeview @IsActivePage("Customers") @IsActivePage("Projects") @IsActivePage("SubProjects") @IsActivePage("Companies") @IsActivePage("Activities")">
-                        <a href="#">
-                            <i class="fa fa-circle-o"></i> Basic Data
+                <a href="#">
+                    <i class="fa fa-circle-o text-red"></i>  <span>Basic Data</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
-                        </a>
+                </a>
                         <ul class="treeview-menu">
                             <li class="@IsActivePage("Customers")"><a asp-page="/Customers/Index"><i class="fa fa-circle-o"></i> Customers</a></li>
                             <li class="@IsActivePage("Projects")"><a asp-page="/Projects/Index"><i class="fa fa-circle-o"></i> Projects</a></li>
@@ -168,7 +168,14 @@
                             <li class="@IsActivePage("Activities")"><a asp-page="/Activities/Index"><i class="fa fa-circle-o"></i> Activities</a></li>
                         </ul>
             </li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Transactions</a></li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-circle-o text-yellow"></i>  <span>Transactions</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+            </li>
             @*<li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
             <li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>

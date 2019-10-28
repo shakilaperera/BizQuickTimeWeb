@@ -3,49 +3,49 @@
 
 @{
     ViewData["Title"] = "Details Project";
-    
+
     ViewData["ActivePage"] = BizQuickTime.Web.Pages.Shared.ManageNavPages.Projects;
 }
 
-    
 
-<div>
-    <h4>Project</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Project.ProjectId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Project.ProjectId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Project.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Project.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Project.Currency)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Project.Currency)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Project.InvoicingCompanyId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Project.InvoicingCompanyId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Project.CompanyId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Project.CompanyId)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Project.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+
+<div class="box box-primary">
+    <div class="box-header">
+        <dl class="row box-body">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Project.ProjectId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Project.ProjectId)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Project.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Project.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Project.Currency)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Project.Currency)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Project.InvoicingCompanyId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Project.InvoicingCompanyId)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Project.CompanyId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Project.CompanyId)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Project.ID">Edit</a> |
+        <a asp-page="./Index">Back to List</a>
+    </div>
+    </div>

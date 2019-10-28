@@ -19,8 +19,11 @@ namespace BizQuickTime.Web.Model
         public string ActivityName { get; set; }
         [Required]
         [MaxLength(5)]
+        [Display(Name = "Calc Type 1")]
         public string CalcType1 { get; set; }
+        [Display(Name = "Calc Type 2")]
         public string CalcType2 { get; set; }
+        [Display(Name = "Calc Type 3")]
         public string CalcType3 { get; set; }
         [Display(Name = "Estimation Qty")]
         public int EstimationQty { get; set; }

@@ -18,15 +18,15 @@ namespace BizQuickTime.Web.Model
         public string Name { get; set; }
         [Required]
         [MaxLength(5)]
-        [Display(Name = "Calc Type1")]
+        [Display(Name = "Calc Type 1")]
         public string CalcType1 { get; set; }
         [Required]
         [MaxLength(5)]
-        [Display(Name = "Calc Type2")]
+        [Display(Name = "Calc Type 2")]
         public string CalcType2 { get; set; }
         [Required]
         [MaxLength(5)]
-        [Display(Name = "Calc Type3")]
+        [Display(Name = "Calc Type 3")]
         public string CalcType3 { get; set; }
     }
 }
