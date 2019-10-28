@@ -326,10 +326,14 @@ namespace BizQuickTime.Web.Migrations
                         .HasMaxLength(5);
 
                     b.Property<string>("CalcType2")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
 
                     b.Property<string>("CalcType3")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
 
                     b.Property<string>("Name")
                         .IsRequired()

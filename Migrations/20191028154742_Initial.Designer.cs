@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BizQuickTime.Web.Migrations
 {
     [DbContext(typeof(BQTDataContext))]
-    [Migration("20191027161938_CreateModels")]
-    partial class CreateModels
+    [Migration("20191028154742_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -328,10 +328,14 @@ namespace BizQuickTime.Web.Migrations
                         .HasMaxLength(5);
 
                     b.Property<string>("CalcType2")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
 
                     b.Property<string>("CalcType3")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
 
                     b.Property<string>("Name")
                         .IsRequired()

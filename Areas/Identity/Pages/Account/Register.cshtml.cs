@@ -133,12 +133,6 @@ namespace BizQuickTime.Web.Areas.Identity.Pages.Account
                         Value = n.ID.ToString(),
                         Text = n.Name
                     }).ToList();
-            //var tip = new SelectListItem()
-            //{
-            //    Value = null,
-            //    Text = "--- select company ---"
-            //};
-            //companies.Insert(0, tip);
             return new SelectList(companies, "Value", "Text");
         }
     }
